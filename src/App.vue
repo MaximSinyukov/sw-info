@@ -11,9 +11,7 @@
       </a>
     </h1>
     <hr>
-    <List
-      v-bind:items="planets"
-    />
+    <List />
   </div>
 </template>
 
@@ -22,15 +20,6 @@ import List from '@/components/List'
 
 export default {
   name: 'App',
-  data() {
-    return {
-      planets: [
-        {id: 1, title: 'Планета 1', residents: 10, saw: false},
-        {id: 2, title: 'Планета 2', residents: 3, saw: false},
-        {id: 3, title: 'Планета 3', residents: 5, saw: false},
-      ]
-    }
-  },
   components: {
     List
   }

@@ -1,21 +1,26 @@
 <template>
   <li
     class="list__item"
-    v-bind:class="{list__item_saw: item.saw}"
+    v-bind:class="{list__item_saw: saw}"
   >
     <input
       class="list__input"
       type="checkbox"
-      @click="item.saw = !item.saw"
+      @click="saw = !saw"
     >
-    <strong>{{ item.id }}.</strong>
-    {{ item.title }}
+    {{ item.name }}
   </li>
 </template>
 
 <script>
 export default {
-  props: ['item']
+  props: ['item'],
+  data() {
+    return {
+      saw: false,
+    }
+  }
+
 }
 </script>
 

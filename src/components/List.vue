@@ -2,8 +2,8 @@
   <div>
     <ul class="list">
       <ListItem
-        v-for="item of items"
-        :key="item.id"
+        v-for="item of allItems"
+        :key="item.created"
         v-bind:item="item"
       />
     </ul>
@@ -11,10 +11,15 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import ListItem from '@/components/ListItem'
 
 export default {
-  props: ['items'],
+  computed: mapGetters(['allItems']),
+  methods: mapActions(['fetchItems']),
+  async mounted() {
+    this.fetchItems();
+  },
   components: {
     ListItem
   }
