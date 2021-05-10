@@ -1,11 +1,6 @@
 <template>
   <div>
-    <select v-model="request">
-      <option value="planets">Планеты</option>
-      <option value="films">Фильмы</option>
-      <option value="starships">Звездолёты</option>
-      <option value="people">Люди</option>
-    </select>
+    <Navigation />
     <h2>Я видел</h2>
     <ul class="list">
       <Loader v-if="getLoading" />
@@ -23,25 +18,16 @@
 import { mapGetters, mapActions } from 'vuex'
 import ListItem from '@/components/ListItem'
 import Loader from '@/components/Loader'
+import Navigation from '@/components/Navigation'
 
 export default {
-  data() {
-    return {
-      request: 'planets'
-    }
-  },
   computed: mapGetters(['allItems', 'getLoading']),
   methods: mapActions(['fetchItems']),
   async mounted() {
     this.fetchItems();
   },
-  watch: {
-    request(value) {
-      this.fetchItems(value);
-    }
-  },
   components: {
-    ListItem, Loader
+    ListItem, Loader, Navigation
   }
 }
 </script>
