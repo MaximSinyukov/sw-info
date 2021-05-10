@@ -1,11 +1,11 @@
 <template>
-  <li class="app__list-item">
+  <li class="list__item">
     <span>
-      <input class="app__list-input" type="checkbox">
+      <input class="list__input" type="checkbox">
       <strong>{{ item.id }} </strong>
       {{ item.title }}
     </span>
-    <button class="app__list-button">&otimes;</button>
+    <button class="list__button">&otimes;</button>
   </li>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-  .app__list-item {
+  .list__item {
     display: flex;
     justify-content: space-between;
     padding: 10px 4px;
@@ -24,15 +24,15 @@ export default {
     border: 1px solid #ccc
   }
 
-  .app__list-item_visited {
+  .list__item_visited {
     text-decoration: line-through rgb(22, 214, 22);
   }
 
-  .app__list-input {
+  .list__input {
     margin-right: 20px;
   }
 
-  .app__list-button {
+  .list__button {
     width: 30px;
     height: 30px;
     text-align: left;

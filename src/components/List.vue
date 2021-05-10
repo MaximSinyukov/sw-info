@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="app__list">
+    <ul class="list">
       <ListItem
         v-for="item of items"
         :key="item.id"
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-  .app__list {
+  .list {
     list-style: none;
     margin: 0;
     padding: 0;
