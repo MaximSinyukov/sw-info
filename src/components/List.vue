@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul class="app__list">
       <ListItem
         v-for="item of items"
         :key="item.id"
@@ -20,3 +20,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .app__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>
