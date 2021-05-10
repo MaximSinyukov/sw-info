@@ -8,7 +8,7 @@
       type="checkbox"
       @click="saw = !saw"
     >
-    {{ item.name }}
+    {{ item.name || item.title }}
   </li>
 </template>
 
