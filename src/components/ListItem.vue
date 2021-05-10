@@ -27,10 +27,12 @@ export default {
 <style>
   .list__item {
     display: flex;
-    justify-content: center;
+    width: 300px;
+    justify-content: flex-start;
     padding: 10px 4px;
+    margin: 0 auto;
     margin-bottom: 10px;
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
   }
 
   .list__item_saw {
