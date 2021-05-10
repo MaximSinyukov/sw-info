@@ -10,14 +10,30 @@
         SWAPI
       </a>
     </h1>
+    <hr>
+    <List
+      v-bind:items="planets"
+    />
   </div>
 </template>
 
 <script>
-
+import List from '@/components/List'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      planets: [
+        {id: 1, title: 'Планета 1', residents: 10, visited: false},
+        {id: 2, title: 'Планета 2', residents: 3, visited: false},
+        {id: 3, title: 'Планета 3', residents: 5, visited: false},
+      ]
+    }
+  },
+  components: {
+    List
+  }
 }
 </script>
 
