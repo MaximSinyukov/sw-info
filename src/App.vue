@@ -1,5 +1,15 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
+    <h1 class="app__title">
+      Данные о звёздных войнах из
+      <a
+        class="app__link"
+        href="https://swapi.dev/"
+        target="_blank"
+      >
+        SWAPI
+      </a>
+    </h1>
   </div>
 </template>
 
@@ -12,8 +22,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+.app {
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -22,5 +32,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.app__title {
+  font-size: 42px;
+  line-height: 44px;
+}
+
+.app__link {
+  text-decoration: none;
+  color: gold;
 }
 </style>
