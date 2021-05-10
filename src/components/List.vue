@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul class="list">
+      <Loader v-if="getLoading" />
       <ListItem
+        v-else
         v-for="item of allItems"
         :key="item.created"
         v-bind:item="item"
@@ -13,15 +15,16 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import ListItem from '@/components/ListItem'
+import Loader from '@/components/Loader'
 
 export default {
-  computed: mapGetters(['allItems']),
+  computed: mapGetters(['allItems', 'getLoading']),
   methods: mapActions(['fetchItems']),
   async mounted() {
     this.fetchItems();
   },
   components: {
-    ListItem
+    ListItem, Loader
   }
 }
 </script>
