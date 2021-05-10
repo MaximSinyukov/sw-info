@@ -1,8 +1,12 @@
 <template>
   <li class="list__item">
-    <span>
-      <input class="list__input" type="checkbox">
-      <strong>{{ item.id }} </strong>
+    <span v-bind:class="{list__item_visited: item.visited}">
+      <input
+        class="list__input"
+        type="checkbox"
+        @click="item.visited = !item.visited"
+      >
+      <strong>{{ item.id }}.</strong>
       {{ item.title }}
     </span>
     <button class="list__button">&otimes;</button>
