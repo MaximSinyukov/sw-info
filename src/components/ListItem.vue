@@ -1,5 +1,8 @@
 <template>
-  <li class="list__item" v-bind:class="{list__item_saw: item.saw}">
+  <li
+    class="list__item"
+    v-bind:class="{list__item_saw: item.saw}"
+  >
     <input
       class="list__input"
       type="checkbox"
