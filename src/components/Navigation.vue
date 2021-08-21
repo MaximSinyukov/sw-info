@@ -48,7 +48,7 @@ export default {
   },
   watch: {
     request(value) {
-      this.fetchItems(value)
+      this.$store.dispatch('fetchItems', value);
     }
   },
 }
