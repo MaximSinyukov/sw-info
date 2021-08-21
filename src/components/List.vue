@@ -1,15 +1,17 @@
 <template>
   <div>
     <Navigation />
+
     <h2>Я видел</h2>
+
     <ul class="list">
       <Loader v-if="getLoading" />
+
       <ListItem
-        v-else
-        v-for="item of allItems"
-        :key="item.created"
-        v-bind:item="item"
-      />
+      v-else
+      v-for="item of allItems"
+      :key="item.created"
+      v-bind:item="item"/>
     </ul>
   </div>
 </template>

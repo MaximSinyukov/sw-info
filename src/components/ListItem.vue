@@ -1,14 +1,12 @@
 <template>
   <li
-    class="list__item"
-    v-bind:class="{list__item_saw: saw}"
-  >
+  class="list__item"
+  v-bind:class="{list__item_saw: saw}">
     <input
-      class="list__input"
-      type="checkbox"
-      @click="saw = !saw"
-    >
-    {{ item.name || item.title }}
+    class="list__input"
+    type="checkbox"
+    @click="saw = !saw">
+      {{ item.name || item.title }}
   </li>
 </template>
 
