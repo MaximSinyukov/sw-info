@@ -11,7 +11,8 @@
       <button
       class="nav__button"
       type="button"
-      @click="changePages('prev')">
+      :disabled="getCurrentPage < 2"
+      @click="changePages(getCurrentPage - 1)">
         &#9668;
       </button>
 
@@ -22,7 +23,8 @@
       <button
       class="nav__button"
       type="button"
-      @click="changePages('next')">
+      :disabled="!(getCurrentPage < getMaxPageCount)"
+      @click="changePages(getCurrentPage + 1)">
         &#9658;
       </button>
     </div>
@@ -31,20 +33,23 @@
 
 <script>
 export default {
-  data() {
-    return {
-      request: 'planets'
-    }
-  },
   methods: {
-    changePages(direction) {
-      this.changePage(direction)
+    changePages(newPage) {
+      this.$store.dispatch('changePage', newPage);
     },
   },
   computed: {
     getCurrentPage() {
-      return this.$store.getters.getCurrentPage;
+      return this.$store.getters['getCurrentPage'];
     },
+    getMaxPageCount() {
+      return this.$store.getters.getMaxPageCount;
+    }
+  },
+  data() {
+    return {
+      request: 'planets'
+    }
   },
   watch: {
     request(value) {
