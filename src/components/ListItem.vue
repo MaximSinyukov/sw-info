@@ -34,6 +34,10 @@ export default {
     border: 1px solid #ccc;
   }
 
+  .list__item:hover {
+    cursor: pointer;
+  }
+
   .list__item_saw {
     text-decoration: line-through rgb(22, 214, 22) 2px;
   }
